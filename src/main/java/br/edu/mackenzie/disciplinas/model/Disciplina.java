@@ -1,18 +1,11 @@
-
 package br.edu.mackenzie.disciplinas.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Entity
-@Getter
-@Setter
-@NoArgsConstructor
 public class Disciplina {
 
     @Id
@@ -24,12 +17,31 @@ public class Disciplina {
     private String curso;
     private Integer semestre;
 
+    public Disciplina() {}
+
     public Disciplina(Long id, String nome, String sigla,
                       String curso, Integer semestre) {
         this.id = id;
         this.nome = nome;
         this.sigla = sigla;
         this.curso = curso;
+        this.semestre = semestre;
+    }
+
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+
+    public String getNome() { return nome; }
+    public void setNome(String nome) { this.nome = nome; }
+
+    public String getSigla() { return sigla; }
+    public void setSigla(String sigla) { this.sigla = sigla; }
+
+    public String getCurso() { return curso; }
+    public void setCurso(String curso) { this.curso = curso; }
+
+    public Integer getSemestre() { return semestre; }
+    public void setSemestre(Integer semestre) {
         this.semestre = semestre;
     }
 }
